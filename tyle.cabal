@@ -1,6 +1,6 @@
-cabal-version:       2.4
-name:                tile
-version:             0.0.0.0
+cabal-version:       3.0
+name:                tyle
+version:             0.0.1.0
 synopsis:            See README for more info
 description:         See README for more info
 homepage:            https://github.com/o1lo01ol1o/tile
@@ -13,14 +13,19 @@ copyright:           2021 o1lo01ol1o
 build-type:          Simple
 extra-doc-files:     README.md
                      CHANGELOG.md
-tested-with:         GHC == 8.8.3
+tested-with:         GHC == 8.10.4
 
 source-repository head
   type:                git
   location:            https://github.com/o1lo01ol1o/tile.git
 
 common common-options
-  build-depends:       base ^>= 4.13.0.0
+  build-depends:       base >=4.7 && <5
+                      , hgeometry
+                      , diagrams
+                      , tilings
+                      , bifunctor
+                      , lens
   
   ghc-options:         -Wall
                        -Wcompat
@@ -42,13 +47,15 @@ common common-options
 library
   import:              common-options
   hs-source-dirs:      src
-  exposed-modules:     Tile
+  exposed-modules:     Tyle, Tyle.Cesis
 
-executable tile
+executable tyle
   import:              common-options
   hs-source-dirs:      app
   main-is:             Main.hs
-  build-depends:       tile
+  build-depends:       tyle
   ghc-options:         -threaded
                        -rtsopts
                        -with-rtsopts=-N
+                       -O2
+

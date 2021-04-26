@@ -6,7 +6,7 @@ Maintainer: o1lo01ol1o <tim.pierson@gmail.com>
 See README for more info
 -}
 
-module Tile
+module Tyle
        ( someFunc
        ) where
 
