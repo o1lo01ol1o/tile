@@ -19,12 +19,14 @@ let
     # These arguments passed to nixpkgs, include some patches and also
     # the haskell.nix functionality itself as an overlay.
     haskellNix.nixpkgsArgs;
+
 in pkgs.haskell-nix.project {
   # 'cleanGit' cleans a source directory based on the files known by git
   src = pkgs.haskell-nix.haskellLib.cleanGit {
-    name = "tyle";
+    name = "tile";
     src = ./.;
   };
   # Specify the GHC version to use.
   compiler-nix-name = "ghc8104"; # Not required for `stack.yaml` based projects.
+  
 }

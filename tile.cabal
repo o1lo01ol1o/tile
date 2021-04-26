@@ -1,5 +1,5 @@
 cabal-version:       3.0
-name:                tyle
+name:                tile
 version:             0.0.1.0
 synopsis:            See README for more info
 description:         See README for more info
@@ -13,7 +13,7 @@ copyright:           2021 o1lo01ol1o
 build-type:          Simple
 extra-doc-files:     README.md
                      CHANGELOG.md
-tested-with:         GHC == 8.10.4
+tested-with:         GHC == 8.8.4
 
 source-repository head
   type:                git
@@ -21,9 +21,12 @@ source-repository head
 
 common common-options
   build-depends:       base >=4.7 && <5
-                      , hgeometry
-                      , diagrams
-                      , tilings
+                      -- , hgeometry == 0.12.0.2
+                      , vector-circular
+                      -- , hgeometry-combinatorial
+                      -- , hgeometry-svg
+                      -- , diagrams
+                      -- , tilings
                       , bifunctor
                       , lens
   
@@ -47,13 +50,13 @@ common common-options
 library
   import:              common-options
   hs-source-dirs:      src
-  exposed-modules:     Tyle, Tyle.Cesis
+  exposed-modules:     Tile, Tile.Cesis
 
-executable tyle
+executable tile
   import:              common-options
   hs-source-dirs:      app
   main-is:             Main.hs
-  build-depends:       tyle
+  build-depends:       tile
   ghc-options:         -threaded
                        -rtsopts
                        -with-rtsopts=-N
