@@ -1,0 +1,7 @@
+cradle:
+  cabal:
+    - path: "src"
+      component: "lib:tile"
+
+    - path: "app/Main.hs"
+      component: "tile:exe:tile"

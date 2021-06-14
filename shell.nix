@@ -1,5 +1,5 @@
 (import ./default.nix).shellFor {
-  withHoogle = true;
+  withHoogle = false;
   tools = {
     cabal = "3.2.0.0";
     hlint = "latest";
